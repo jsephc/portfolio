@@ -4,9 +4,10 @@
     "slug": "grifols",
     "title": "Grifols",
     "discipline": "Native App, WebApp Design",
-    "year": "2025",
+    "year": "2024 - 2025",
     "image": "https://i.imgur.com/iJNvRZS.png",
     "description": "A redesign of Grifols' plasma donor app, replacing a broken, inconsistent DonorHub 2.0 with a reliable experience built on Grifols' D3 Design System.",
+    "layout": "detailed",
     "sections": [
       {
         "id": "problem-statement",
@@ -188,53 +189,6 @@
   },
   {
     "id": "06",
-    "slug": "sidom",
-    "title": "SIDOM",
-    "discipline": "Rebranding & Website Design",
-    "year": "2021",
-    "image": "https://i.imgur.com/iqeYiZq.png",
-    "description": "",
-    "layout": "gallery",
-    "sections": [
-      {
-        "id": "section-1",
-        "label": "Section 1",
-        "body": [
-          "[img]https://i.imgur.com/TW0Q7ux.png[/img]"
-        ]
-      },
-      {
-        "id": "section-2",
-        "label": "Section 2",
-        "body": [
-          "[img]https://i.imgur.com/nz6yk6h.png[/img]"
-        ]
-      },
-      {
-        "id": "section-3",
-        "label": "Section 3",
-        "body": [
-          "[img]https://i.imgur.com/WlZ3LAq.png[/img]"
-        ]
-      },
-      {
-        "id": "video",
-        "label": "video",
-        "body": [
-          "[video]https://www.youtube.com/watch?v=LWWsocgd0kI[/video]"
-        ]
-      },
-      {
-        "id": "section-4",
-        "label": "Section 4",
-        "body": [
-          "[img]https://i.imgur.com/xaduti4.gif[/img]"
-        ]
-      }
-    ]
-  },
-  {
-    "id": "07",
     "slug": "transtelco",
     "title": "Transtelco",
     "discipline": "Rebranding & Website Design",
@@ -283,6 +237,53 @@
         "label": "Section 6",
         "body": [
           "[img]https://i.imgur.com/mYFD4i0.png[/img]"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "07",
+    "slug": "sidom",
+    "title": "SIDOM",
+    "discipline": "Rebranding & Website Design",
+    "year": "2021",
+    "image": "https://i.imgur.com/iqeYiZq.png",
+    "description": "",
+    "layout": "gallery",
+    "sections": [
+      {
+        "id": "section-1",
+        "label": "Section 1",
+        "body": [
+          "[img]https://i.imgur.com/TW0Q7ux.png[/img]"
+        ]
+      },
+      {
+        "id": "section-2",
+        "label": "Section 2",
+        "body": [
+          "[img]https://i.imgur.com/nz6yk6h.png[/img]"
+        ]
+      },
+      {
+        "id": "section-3",
+        "label": "Section 3",
+        "body": [
+          "[img]https://i.imgur.com/WlZ3LAq.png[/img]"
+        ]
+      },
+      {
+        "id": "video",
+        "label": "video",
+        "body": [
+          "[video]https://www.youtube.com/watch?v=LWWsocgd0kI[/video]"
+        ]
+      },
+      {
+        "id": "section-4",
+        "label": "Section 4",
+        "body": [
+          "[img]https://i.imgur.com/xaduti4.gif[/img]"
         ]
       }
     ]

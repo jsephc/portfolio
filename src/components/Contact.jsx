@@ -96,18 +96,18 @@ export default function Contact() {
                     type="text"
                     value={discipline}
                     onChange={(e) => setDiscipline(e.target.value)}
-                    className="w-full bg-transparent border-0 border-b-2 border-void/20 focus:border-cinnabar outline-none font-heading text-void pb-3 transition-colors"
+                    className="w-full bg-transparent border-0 border-b-2 border-void/20 focus:border-cinnabar outline-none font-heading text-void pb-3 transition-colors truncate"
                     style={{
-                      fontSize: "clamp(1.5rem, 4vw, 4rem)",
+                      fontSize: "clamp(1.5rem, 2.5vw, 2.75rem)",
                       letterSpacing: "-0.02em",
                     }}
                     required
                   />
                   {!discipline && (
                     <span
-                      className="absolute left-0 bottom-3 font-heading pointer-events-none"
+                      className="absolute left-0 bottom-3 font-heading pointer-events-none whitespace-nowrap max-w-full truncate"
                       style={{
-                        fontSize: "clamp(1.5rem, 4vw, 4rem)",
+                        fontSize: "clamp(1.5rem, 2.5vw, 2.75rem)",
                         letterSpacing: "-0.02em",
                         color: typewriter.color,
                       }}

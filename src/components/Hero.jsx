@@ -25,9 +25,9 @@ export default function Hero({ onMenuOpen }) {
   return (
     <section id="hero" ref={scrollRef} className="relative" style={{ height: "210vh" }}>
       {/* Sticky pinned viewport */}
-      <div className="sticky top-0 h-screen overflow-hidden grain bg-void">
+      <div className="sticky top-0 h-screen overflow-hidden grain bg-void flex flex-col">
         {/* Top bar */}
-        <div className="absolute top-0 left-0 right-0 z-30 flex items-center justify-between px-[8vw] md:px-[12vw] py-6 md:py-8">
+        <div className="flex items-center justify-between px-[8vw] md:px-[12vw] py-6 md:py-8">
           <div className="font-body text-parchment text-[13px] tracking-mega uppercase">
             José Caselles - Product Designer
           </div>
@@ -42,10 +42,10 @@ export default function Hero({ onMenuOpen }) {
         </div>
 
         {/* Intro line */}
-        <div className="absolute top-24 md:top-32 left-0 right-0 z-20 px-[8vw] md:px-[12vw] pointer-events-none">
+        <div className="px-[8vw] md:px-[12vw] pb-6">
           <h1
-            className="font-heading heading-kern text-parchment leading-[1.05] mb-8"
-            style={{ fontSize: "clamp(1.75rem, 4.5vw, 3.25rem)" }}
+            className="font-heading heading-kern text-parchment leading-[1.05] mb-6"
+            style={{ fontSize: "clamp(1.5rem, 4.5vw, 3.25rem)" }}
           >
             Product design across brand,
             <br />
@@ -53,36 +53,38 @@ export default function Hero({ onMenuOpen }) {
           </h1>
           <a
             href="#contact"
-            className="pointer-events-auto inline-block font-body font-bold text-void bg-cinnabar text-sm tracking-mega uppercase px-6 py-3 hover:bg-parchment transition-colors"
+            className="inline-block font-body font-bold text-void bg-cinnabar text-sm tracking-mega uppercase px-6 py-3 hover:bg-parchment transition-colors"
           >
             Send Me a Message
           </a>
         </div>
 
-        {/* Horizontal scrub track */}
-        <div
-          className="absolute top-[60%] left-0 flex gap-[2vw] z-10"
-          style={{
-            transform: `translateY(-50%) translateX(calc(-${scrollProgress} * (100% - 100vw + 8vw)))`,
-            willChange: "transform",
-            paddingLeft: "8vw",
-          }}
-        >
-          {PROJECTS.map((project, i) => (
-            <ProjectCard key={project.id} project={project} index={i} />
-          ))}
-          {/* End cap */}
-          <div className="flex items-center pl-[6vw] pr-[12vw]">
-            <div className="max-w-xs">
-              <p className="font-body text-parchment/50 text-sm tracking-caption leading-relaxed">
-                A decade of designing systems, brands, and experiences across Argentina and beyond.
-              </p>
+        {/* Horizontal scrub track - fills remaining space, centered vertically */}
+        <div className="flex-1 min-h-0 flex items-center overflow-hidden">
+          <div
+            className="flex gap-[2vw]"
+            style={{
+              transform: `translateX(calc(-${scrollProgress} * (100% - 100vw + 8vw)))`,
+              willChange: "transform",
+              paddingLeft: "8vw",
+            }}
+          >
+            {PROJECTS.map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
+            {/* End cap */}
+            <div className="flex items-center pl-[6vw] pr-[12vw]">
+              <div className="max-w-xs">
+                <p className="font-body text-parchment/50 text-sm tracking-caption leading-relaxed">
+                  A decade of designing systems, brands, and experiences across Argentina and beyond.
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Bottom rule line */}
-        <div className="absolute bottom-0 left-0 right-0 z-20">
+        <div>
           <div className="h-px bg-cinnabar/40" />
           <div className="flex items-center justify-between px-[8vw] md:px-[12vw] py-4">
             <span className="font-body text-parchment/40 text-[12px] tracking-mega uppercase">
@@ -98,13 +100,13 @@ export default function Hero({ onMenuOpen }) {
   );
 }
 
-function ProjectCard({ project, index }) {
+function ProjectCard({ project }) {
   const [hovered, setHovered] = useState(false);
   return (
     <Link
       to={`/works/${project.slug}`}
       className="relative flex-shrink-0 group block"
-      style={{ width: "clamp(280px, 32vw, 520px)" }}
+      style={{ width: "clamp(200px, min(30vw, 26vh), 440px)" }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -136,16 +138,16 @@ function ProjectCard({ project, index }) {
         />
       </div>
 
-      <div className="mt-4 flex items-start justify-between">
-        <div>
-          <h3 className="font-heading text-parchment text-xl md:text-2xl heading-kern">
+      <div className="mt-3 flex items-start justify-between gap-3">
+        <div className="min-w-0">
+          <h3 className="font-heading text-parchment text-lg md:text-xl heading-kern leading-tight truncate">
             {project.title}
           </h3>
-          <p className="font-body text-parchment/50 text-sm tracking-caption mt-1">
+          <p className="font-body text-parchment/50 text-xs md:text-sm tracking-caption mt-1 truncate">
             {project.discipline}
           </p>
         </div>
-        <span className="font-heading text-cinnabar text-base">
+        <span className="font-heading text-cinnabar text-base flex-shrink-0">
           {project.id}
         </span>
       </div>
