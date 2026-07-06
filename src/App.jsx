@@ -7,7 +7,7 @@ import ProjectDetail from '@/pages/ProjectDetail';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/portfolio">
       <ScrollToTop />
       <CustomCursor />
       <Routes>
