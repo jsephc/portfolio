@@ -1,0 +1,393 @@
+[
+  {
+    "id": "01",
+    "slug": "grifols",
+    "title": "Grifols",
+    "discipline": "Native App, WebApp Design",
+    "year": "2025",
+    "image": "https://i.imgur.com/iJNvRZS.png",
+    "description": "A redesign of Grifols' plasma donor app, replacing a broken, inconsistent DonorHub 2.0 with a reliable experience built on Grifols' D3 Design System.",
+    "sections": [
+      {
+        "id": "problem-statement",
+        "label": "Problem Statement",
+        "body": [
+          "The DonorHub 2.0 app was delivering a subpar experience that actively hindered donor engagement. Users were confronted with:",
+          "- A broken user journey with dead-end flows that prevented task completion.\n- A dated and inconsistent interface that failed to utilize Grifols' D3 Design System, damaging brand perception.",
+          "This created a frustrating experience for our donors and blocked the development team from efficiently shipping new functionalities, putting key business goals like donor retention and digital innovation at risk."
+        ]
+      },
+      {
+        "id": "objectives-goals",
+        "label": "Objectives & Goals",
+        "body": [
+          "- Overhaul the User Experience (UX): Redesign the entire app from the ground up to create a seamless, intuitive, and frustration-free journey, eliminating all broken flows and dead-end paths.\n- Achieve Brand and UI Consistency: Implement Grifols' official D3 Design System across the entire application to deliver a modern, cohesive, and trustworthy brand experience.\n- Modernize the Technology Stack: Migrate from the deprecated architecture to a robust and scalable foundation, eliminating technical debt and improving overall app performance and stability.\n- Enable Future Innovation: Build a flexible platform that allows for the rapid and efficient development and deployment of new, value-adding features to meet evolving donor needs."
+        ]
+      },
+      {
+        "id": "our-process",
+        "label": "Our Process",
+        "body": [
+          "- Discover\n- Define\n- Ideate\n- Design"
+        ]
+      },
+      {
+        "id": "business-challenges",
+        "label": "Business Challenges",
+        "body": [
+          "- Risk of Donor Churn\n- Brand Erosion and Lack of Trust\n- Stifled Innovation and Slow Time-to-Market\n- High Maintenance Costs and Inefficiency"
+        ]
+      },
+      {
+        "id": "quantitative-research",
+        "label": "Quantitative Research",
+        "body": [
+          "Device usage split:",
+          "- 92% - Mobile App Dominance\n- 7% - Desktop Usage\n- 1% - Tablet User Workaround: instead of using the native mobile app as expected, these users opted for web - a deliberate workaround to avoid the app's instability and errors.",
+          "Other key findings:",
+          "- 33% - Primary Flow Completion Rate\n- 61% - Referral Intent & Missed Opportunity"
+        ]
+      },
+      {
+        "id": "user-needs",
+        "label": "User Needs",
+        "body": [
+          "- A Seamless & Reliable Way to Manage Donations: users need to effortlessly schedule appointments, check their compensation status, and complete other primary tasks without encountering crashes, errors, or dead ends. The tool must be reliable and work as expected every single time.\n- A Clear & Trustworthy Interface: donors need a modern, consistent, and intuitive interface that inspires confidence, especially when accessing sensitive personal health data. The experience must feel professional and align with the quality they expect from the Grifols brand.\n- Empowerment and Control Over Their Journey: users need to feel in control by easily tracking their donation history and feeling valued for their contribution. They also need a simple, functional way to act on their desire to refer others and share the opportunity."
+        ]
+      },
+      {
+        "id": "competitor-analysis",
+        "label": "Competitor Analysis",
+        "body": [
+          "Blood Donor American Red Cross",
+          "This app serves the volunteer (non-compensated) blood donation community for the American Red Cross. Its focus is less on financial transactions and more on altruism, community building, and making the logistics of donating blood as simple as possible for volunteers.",
+          "- Tracking the Impact with \"The Blood Journey\": users receive real-time notifications when their donation is processed and sent to a hospital, often including the name of the facility.",
+          "OctaApp (Octapharma Plasma)",
+          "The OctaApp is Octapharma Plasma's mobile tool for its donors. Its primary function is to manage the donation process, track payments, and increase donor loyalty through a convenient digital experience.",
+          "- OctaPass: a digital questionnaire donors can complete on the day of their donation before arriving at the center. Upon completion, it generates a unique QR code, letting donors skip a significant portion of the on-site screening process."
+        ]
+      },
+      {
+        "id": "user-persona",
+        "label": "User Persona",
+        "body": [
+          "Michael Johnson - Delivery Driver, 36, Maplewood",
+          "Michael is a hardworking individual who juggles the demands of his job, family life, and plasma donation commitments with determination and resilience. He started donating after his wife recommended doing so three years ago, has been donating ever since, and finds that donating plasma twice a week is a practical way to earn extra income to cover his family's immediate needs, while also making a difference in the lives of others through his donations.",
+          "On Maslow's hierarchy of needs, Michael's primary motivation sits at the Safety level - plasma donation as a means of financial security for his family.",
+          "A day in their life:",
+          "- Schedules his next donation in seconds between delivery stops.\n- Relies on a fast, digital check-in to avoid delays at the center.\n- Checks his payment status at night to confirm funds are available for his family.",
+          "Pain points:",
+          "- Wasted time from constant app crashes and glitches.\n- Anxiety over unclear payment status and scheduling changes.\n- Frustration with a clunky, unprofessional interface that erodes trust.",
+          "\"Donating twice a week helps us stay on top of the bills. I need the process to be quick and reliable so I can get back to my family. Knowing I'm helping save a life is the bonus.\""
+        ]
+      },
+      {
+        "id": "key-screens",
+        "label": "Key Screens",
+        "body": [
+          "Home Screen",
+          "- Profile and Donor ID access\n- Notifications\n- Easy Scheduling - book the next appointment in two clicks\n- Express Kiosk questionnaire to speed up the in-center donation process\n- Navigation bar and menu for quick access to History, Donate, and Chat",
+          "Schedule Screen",
+          "- Calendar to select a day\n- Morning / afternoon / evening time selector\n- Recommended appointment highlighted by best compensation",
+          "Profile Screen",
+          "- Donor credential with photo, Donor ID, and birthday - available to show at the center if needed\n- Tabs to switch between profile information and app settings"
+        ]
+      },
+      {
+        "id": "additional-deliverables",
+        "label": "Additional Deliverables",
+        "body": [
+          "Beyond the primary screens, the project included a full donor-journey UX blueprint mapping touchpoints, staff actions, and pain points across five stages from awareness to appointment scheduling; hand-drawn sketches used to validate early flows; and detailed user-flow diagrams covering both new and returning donor paths, including calendar-status and unavailability-reason logic."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "02",
+    "slug": "nowy-dwor",
+    "title": "Nowy Dwor",
+    "discipline": "Brand Identity",
+    "year": "2024",
+    "image": "https://i.imgur.com/631VnLg.jpg",
+    "description": "",
+    "layout": "gallery",
+    "sections": [
+      {
+        "id": "section-1",
+        "label": "Section 1",
+        "body": []
+      }
+    ]
+  },
+  {
+    "id": "03",
+    "slug": "accessibility-assessment",
+    "title": "Accessibility Assessment",
+    "discipline": "Accessibility / UX Audit",
+    "year": "2023",
+    "image": "https://i.imgur.com/i5LNkTf.png",
+    "description": "",
+    "layout": "gallery",
+    "sections": [
+      {
+        "id": "section-1",
+        "label": "Section 1",
+        "body": []
+      }
+    ]
+  },
+  {
+    "id": "04",
+    "slug": "creating-a-dynamic-sales-process",
+    "title": "Creating a Dynamic Sales Process",
+    "discipline": "UX Design - Insurance",
+    "year": "2023",
+    "image": "https://i.imgur.com/JgZEitL.jpg",
+    "description": "",
+    "layout": "gallery",
+    "sections": [
+      {
+        "id": "section-1",
+        "label": "Section 1",
+        "body": []
+      }
+    ]
+  },
+  {
+    "id": "05",
+    "slug": "people-banking-redesign",
+    "title": "People Banking Redesign",
+    "discipline": "Material study",
+    "year": "2021 - 2022",
+    "image": "https://i.imgur.com/WU7XP2X.png",
+    "description": "A visual redesign of Banco Agrario de Colombia's People Banking page - new brand colours, typography, and a modernized UI system rooted in Colombia's agrarian identity.",
+    "layout": "gallery",
+    "sections": [
+      {
+        "id": "section-1",
+        "label": "Section 1",
+        "body": [
+          "[img]https://i.imgur.com/IKfFPO3.png[/img]"
+        ]
+      },
+      {
+        "id": "section-2",
+        "label": "Section 2",
+        "body": [
+          "[img]https://i.imgur.com/GglxsSx.png[/img]"
+        ]
+      },
+      {
+        "id": "section-3",
+        "label": "Section 3",
+        "body": [
+          "[img]https://i.imgur.com/mIqHkk5.png[/img]"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "06",
+    "slug": "sidom",
+    "title": "SIDOM",
+    "discipline": "Rebranding & Website Design",
+    "year": "2021",
+    "image": "https://i.imgur.com/iqeYiZq.png",
+    "description": "",
+    "layout": "gallery",
+    "sections": [
+      {
+        "id": "section-1",
+        "label": "Section 1",
+        "body": [
+          "[img]https://i.imgur.com/TW0Q7ux.png[/img]"
+        ]
+      },
+      {
+        "id": "section-2",
+        "label": "Section 2",
+        "body": [
+          "[img]https://i.imgur.com/nz6yk6h.png[/img]"
+        ]
+      },
+      {
+        "id": "section-3",
+        "label": "Section 3",
+        "body": [
+          "[img]https://i.imgur.com/WlZ3LAq.png[/img]"
+        ]
+      },
+      {
+        "id": "video",
+        "label": "video",
+        "body": [
+          "[video]https://www.youtube.com/watch?v=LWWsocgd0kI[/video]"
+        ]
+      },
+      {
+        "id": "section-4",
+        "label": "Section 4",
+        "body": [
+          "[img]https://i.imgur.com/xaduti4.gif[/img]"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "07",
+    "slug": "transtelco",
+    "title": "Transtelco",
+    "discipline": "Rebranding & Website Design",
+    "year": "2021",
+    "image": "https://i.imgur.com/8FB7jt9.png",
+    "description": "",
+    "layout": "gallery",
+    "sections": [
+      {
+        "id": "section-1",
+        "label": "Section 1",
+        "body": [
+          "[img]https://i.imgur.com/FjoMQj6.png[/img]"
+        ]
+      },
+      {
+        "id": "section-2",
+        "label": "Section 2",
+        "body": [
+          "[img]https://i.imgur.com/fYDnbYO.png[/img]"
+        ]
+      },
+      {
+        "id": "section-3",
+        "label": "Section 3",
+        "body": [
+          "[img]https://i.imgur.com/OliIVxC.gif[/img]"
+        ]
+      },
+      {
+        "id": "section-4",
+        "label": "Section 4",
+        "body": [
+          "[img]https://i.imgur.com/OUa2r3n.png[/img]"
+        ]
+      },
+      {
+        "id": "section-5",
+        "label": "Section 5",
+        "body": [
+          "[img]https://i.imgur.com/KlTBzOC.gif[/img]"
+        ]
+      },
+      {
+        "id": "section-6",
+        "label": "Section 6",
+        "body": [
+          "[img]https://i.imgur.com/mYFD4i0.png[/img]"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "08",
+    "slug": "onpower",
+    "title": "ONPOWER",
+    "discipline": "Brand Identity",
+    "year": "2019-2020",
+    "image": "https://i.imgur.com/KN7sS8x.png",
+    "description": "",
+    "layout": "gallery",
+    "sections": [
+      {
+        "id": "section-1",
+        "label": "Section 1",
+        "body": [
+          "[img]https://i.imgur.com/pASygmY.png[/img]"
+        ]
+      },
+      {
+        "id": "section-2",
+        "label": "Section 2",
+        "body": [
+          "[img]https://i.imgur.com/RtktMIT.png[/img]"
+        ]
+      },
+      {
+        "id": "section-3",
+        "label": "Section 3",
+        "body": [
+          "[img]https://i.imgur.com/FjMwnOP.png[/img]"
+        ]
+      },
+      {
+        "id": "section-4",
+        "label": "Section 4",
+        "body": [
+          "[img]https://i.imgur.com/RSDwWTh.png[/img]"
+        ]
+      },
+      {
+        "id": "section-5",
+        "label": "Section 5",
+        "body": [
+          "[img]https://i.imgur.com/sTOxl2z.png[/img]"
+        ]
+      },
+      {
+        "id": "section-6",
+        "label": "Section 6",
+        "body": [
+          "[img]https://i.imgur.com/7qtxQFr.png[/img]"
+        ]
+      },
+      {
+        "id": "section-7",
+        "label": "Section 7",
+        "body": [
+          "[img]https://i.imgur.com/Z2376vR.png[/img]"
+        ]
+      },
+      {
+        "id": "section-8",
+        "label": "Section 8",
+        "body": [
+          "[img]https://i.imgur.com/kdcqqjs.png[/img]"
+        ]
+      },
+      {
+        "id": "section-9",
+        "label": "Section 9",
+        "body": [
+          "[img]https://i.imgur.com/QhcjLYs.png[/img]"
+        ]
+      },
+      {
+        "id": "section-10",
+        "label": "Section 10",
+        "body": [
+          "[img]https://i.imgur.com/iXOO4jb.png[/img]"
+        ]
+      },
+      {
+        "id": "section-11",
+        "label": "Section 11",
+        "body": [
+          "[img]https://i.imgur.com/7lWCteI.png[/img]"
+        ]
+      },
+      {
+        "id": "section-12",
+        "label": "Section 12",
+        "body": [
+          "[img]https://i.imgur.com/wuIU1me.png[/img]"
+        ]
+      },
+      {
+        "id": "section-13",
+        "label": "Section 13",
+        "body": [
+          "[img]https://i.imgur.com/77rSazf.png[/img]"
+        ]
+      }
+    ]
+  }
+]
