@@ -29,6 +29,11 @@
     --depth: #7B29A6;
     --parchment: #F2D2AB;
     --cinnabar: #D05D15;
+    /* a11y variants: cinnabar fails 4.5:1 for small text on both backgrounds
+       (3.78:1 on void, 3.59:1 on parchment). bright = 5.6:1 on void,
+       deep = 4.8:1 on parchment. Use for text under ~24px. */
+    --cinnabar-bright: #D96A2A;
+    --cinnabar-deep: #993D08;
 
     --font-heading: 'BioRhyme', serif;
     --font-body: 'Quicksand', ui-sans-serif, system-ui, sans-serif;
@@ -51,7 +56,34 @@
     color: var(--parchment);
     font-family: var(--font-body);
     overflow-x: hidden;
-    cursor: none;
+  }
+
+  /* Hide the native cursor only where the custom cursor actually renders
+     (md+ fine pointers) and only when the user hasn't asked for reduced motion */
+  @media (min-width: 768px) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    body {
+      cursor: none;
+    }
+  }
+
+  /* Visible focus for keyboard users on any background: light ring + dark halo */
+  :focus-visible {
+    outline: 2px solid var(--parchment);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 6px rgba(22, 3, 36, 0.85);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 
   ::selection {
@@ -122,10 +154,6 @@
   }
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 0px;
-}
 
 /* Heading defaults */
 h1, h2, h3, h4, .font-heading {

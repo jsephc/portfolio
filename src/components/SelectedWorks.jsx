@@ -11,7 +11,7 @@ export default function SelectedWorks() {
       <div className="absolute top-0 left-0 right-0 h-px bg-cinnabar/40" />
 
       <div className="mb-16 md:mb-24">
-        <p className="font-body text-cinnabar text-[13px] tracking-mega uppercase mb-4">
+        <p className="font-body text-cinnabar-bright text-[13px] tracking-mega uppercase mb-4">
           03 - Case Studies
         </p>
         <h2
@@ -34,6 +34,8 @@ export default function SelectedWorks() {
               className="group block border-t border-parchment/15 last:border-b"
               onMouseEnter={() => setHovered(i)}
               onMouseLeave={() => setHovered(null)}
+              onFocus={() => setHovered(i)}
+              onBlur={() => setHovered(null)}
             >
               <div className="grid grid-cols-12 items-center gap-4 py-6 md:py-10 transition-all duration-500 relative overflow-hidden">
                 {/* Hover glow */}
@@ -61,12 +63,12 @@ export default function SelectedWorks() {
                   </h3>
                 </div>
                 <div className="col-span-7 md:col-span-3">
-                  <p className="font-body text-parchment/50 text-sm tracking-caption uppercase">
+                  <p className="font-body text-parchment/70 text-sm tracking-caption uppercase">
                     {project.discipline}
                   </p>
                 </div>
                 <div className="col-span-3 md:col-span-2 text-right">
-                  <span className="font-body text-parchment/40 text-sm tracking-caption">
+                  <span className="font-body text-parchment/70 text-sm tracking-caption">
                     {project.year}
                   </span>
                 </div>
@@ -110,7 +112,7 @@ export default function SelectedWorks() {
                       {project.description}
                     </p>
                     <div className="mt-8 flex gap-4">
-                      <span className="font-body text-cinnabar text-sm tracking-mega uppercase border-b border-cinnabar pb-1">
+                      <span className="font-body text-cinnabar-bright text-sm tracking-mega uppercase border-b border-cinnabar-bright pb-1">
                         View Case Study
                       </span>
                     </div>

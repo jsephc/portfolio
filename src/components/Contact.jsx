@@ -1,20 +1,27 @@
 import React, { useEffect, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 
+// Prompt colors sit on parchment at >=24px (large text, 3:1 minimum):
+// #D05D15 3.6:1, #7B29A6 5.4:1, #160324 13.6:1, #2E5F53 5.1:1, #B0475A 3.7:1
 const PROMPTS = [
   { text: "a brand identity", color: "#D05D15" },
   { text: "a design system", color: "#7B29A6" },
   { text: "a UX audit", color: "#160324" },
-  { text: "a product redesign", color: "#3D7A6B" },
+  { text: "a product redesign", color: "#2E5F53" },
   { text: "an accessibility review", color: "#B0475A" },
 ];
 
+const REDUCED_MOTION =
+  typeof window !== "undefined" &&
+  window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
 function useTypewriter(prompts) {
   const [promptIndex, setPromptIndex] = useState(0);
-  const [text, setText] = useState("");
+  const [text, setText] = useState(REDUCED_MOTION ? prompts[0].text : "");
   const [phase, setPhase] = useState("typing");
 
   useEffect(() => {
+    if (REDUCED_MOTION) return undefined;
     const target = prompts[promptIndex].text;
     let timeout;
 
@@ -79,7 +86,7 @@ export default function Contact() {
     <section id="contact" className="relative bg-parchment grain py-[15vh] px-[8vw] md:px-[12vw]">
       <div className="absolute top-0 left-0 right-0 h-px bg-cinnabar" />
 
-      <p className="font-body text-cinnabar text-[13px] tracking-mega uppercase mb-8">
+      <p className="font-body text-cinnabar-deep text-[13px] tracking-mega uppercase mb-8">
         04 - Contact
       </p>
 
@@ -88,7 +95,7 @@ export default function Contact() {
           <div className="flex flex-col md:flex-row md:items-end gap-6 md:gap-12">
             <div className="flex-1">
               <label className="block">
-                <span className="font-body text-void/60 text-base tracking-caption block mb-3">
+                <span className="font-body text-void/70 text-base tracking-caption block mb-3">
                   I am looking for
                 </span>
                 <div className="relative">
@@ -96,7 +103,7 @@ export default function Contact() {
                     type="text"
                     value={discipline}
                     onChange={(e) => setDiscipline(e.target.value)}
-                    className="w-full bg-transparent border-0 border-b-2 border-void/20 focus:border-cinnabar outline-none font-heading text-void pb-3 transition-colors truncate"
+                    className="w-full bg-transparent border-0 border-b-2 border-void/60 focus:border-cinnabar outline-none font-heading text-void pb-3 transition-colors truncate"
                     style={{
                       fontSize: "clamp(1.5rem, 2.5vw, 2.75rem)",
                       letterSpacing: "-0.02em",
@@ -121,7 +128,7 @@ export default function Contact() {
             </div>
             <div className="md:w-[280px]">
               <label className="block">
-                <span className="font-body text-void/60 text-base tracking-caption block mb-3">
+                <span className="font-body text-void/70 text-base tracking-caption block mb-3">
                   reach me at
                 </span>
                 <input
@@ -129,7 +136,7 @@ export default function Contact() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="name@email.com"
-                  className="w-full bg-transparent border-0 border-b-2 border-void/20 focus:border-cinnabar outline-none font-body text-void pb-3 transition-colors placeholder:text-void/30"
+                  className="w-full bg-transparent border-0 border-b-2 border-void/60 focus:border-cinnabar outline-none font-body text-void pb-3 transition-colors placeholder:text-void/60"
                   style={{ fontSize: "1.25rem" }}
                   required
                 />
@@ -137,14 +144,14 @@ export default function Contact() {
             </div>
             <div className="md:w-[280px]">
               <label className="block">
-                <span className="font-body text-void/60 text-base tracking-caption block mb-3">
+                <span className="font-body text-void/70 text-base tracking-caption block mb-3">
                   to be finished by
                 </span>
                 <input
                   type="date"
                   value={deadline}
                   onChange={(e) => setDeadline(e.target.value)}
-                  className="w-full bg-transparent border-0 border-b-2 border-void/20 focus:border-cinnabar outline-none font-body text-void pb-3 transition-colors"
+                  className="w-full bg-transparent border-0 border-b-2 border-void/60 focus:border-cinnabar outline-none font-body text-void pb-3 transition-colors"
                   style={{ fontSize: "1.25rem" }}
                   required
                 />
@@ -153,7 +160,7 @@ export default function Contact() {
             <button
               type="submit"
               disabled={sending}
-              className="group flex items-center gap-3 self-start md:self-end font-body text-void text-sm tracking-mega uppercase border-b-2 border-void pb-3 hover:text-cinnabar hover:border-cinnabar transition-colors disabled:opacity-50"
+              className="group flex items-center gap-3 self-start md:self-end font-body text-void text-sm tracking-mega uppercase border-b-2 border-void pb-3 hover:text-cinnabar-deep hover:border-cinnabar-deep transition-colors disabled:opacity-50"
             >
               {sending ? "Sending..." : "Send"}
               <ArrowUpRight
@@ -164,11 +171,11 @@ export default function Contact() {
             </button>
           </div>
           {error && (
-            <p className="font-body text-cinnabar text-sm tracking-caption mt-4">{error}</p>
+            <p role="alert" className="font-body text-cinnabar-deep text-sm tracking-caption mt-4">{error}</p>
           )}
         </form>
       ) : (
-        <div className="py-8">
+        <div className="py-8" role="status">
           <p
             className="font-heading heading-kern text-void leading-none"
             style={{ fontSize: "clamp(2rem, 7vw, 6rem)" }}
@@ -183,7 +190,7 @@ export default function Contact() {
 
       <div className="mt-[12vh] flex flex-col md:flex-row gap-8 md:gap-12 border-t border-void/15 pt-12">
         <div className="flex-1">
-          <p className="font-body text-void/50 text-sm tracking-mega uppercase mb-2">
+          <p className="font-body text-void/70 text-sm tracking-mega uppercase mb-2">
             Direct Line
           </p>
           <a
@@ -195,7 +202,7 @@ export default function Contact() {
           </a>
         </div>
         <div>
-          <p className="font-body text-void/50 text-sm tracking-mega uppercase mb-2">
+          <p className="font-body text-void/70 text-sm tracking-mega uppercase mb-2">
             Located
           </p>
           <p className="font-heading text-void text-xl md:text-2xl heading-kern">

@@ -12,7 +12,7 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <main className="relative bg-void">
+    <main id="main" tabIndex={-1} className="relative bg-void outline-none">
       <ScrollSignature />
       <MenuOverlay open={menuOpen} onClose={() => setMenuOpen(false)} />
 

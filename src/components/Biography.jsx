@@ -7,7 +7,7 @@ export default function Biography() {
 
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
         <div className="md:col-span-3">
-          <p className="font-body text-cinnabar text-[13px] tracking-mega uppercase mb-4">
+          <p className="font-body text-cinnabar-bright text-[13px] tracking-mega uppercase mb-4">
             01 - Biography
           </p>
         </div>

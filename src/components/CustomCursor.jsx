@@ -4,8 +4,14 @@ export default function CustomCursor() {
   const [position, setPosition] = useState({ x: -100, y: -100 });
   const [isHovering, setIsHovering] = useState(false);
   const [isClicking, setIsClicking] = useState(false);
+  // The CSS that hides the native cursor is scoped to this same condition,
+  // so users with reduced motion keep their normal pointer.
+  const [reducedMotion] = useState(
+    () => window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  );
 
   useEffect(() => {
+    if (reducedMotion) return;
     let rafId;
     const move = (e) => {
       cancelAnimationFrame(rafId);
@@ -29,7 +35,9 @@ export default function CustomCursor() {
       window.removeEventListener("mousedown", down);
       window.removeEventListener("mouseup", up);
     };
-  }, []);
+  }, [reducedMotion]);
+
+  if (reducedMotion) return null;
 
   return (
     <>
@@ -45,8 +53,10 @@ export default function CustomCursor() {
       >
         <div
           style={{
-            width: isHovering ? "0px" : "7px",
-            height: isHovering ? "0px" : "7px",
+            // Keep a visible dot while hovering interactive elements -
+            // collapsing to 0 left only a translucent ring to aim with.
+            width: isHovering ? "5px" : "7px",
+            height: isHovering ? "5px" : "7px",
             backgroundColor: "#F2D2AB",
             borderRadius: "50%",
             transition: "all 0.2s ease-out",

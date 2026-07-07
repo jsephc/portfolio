@@ -18,7 +18,10 @@ export default function ScrollSignature() {
   const padded = String(progress).padStart(2, "0");
 
   return (
-    <div className="fixed right-3 top-0 z-[9000] hidden md:flex h-screen flex-col items-center justify-center pointer-events-none">
+    <div
+      aria-hidden="true"
+      className="fixed right-3 top-0 z-[9000] hidden md:flex h-screen flex-col items-center justify-center pointer-events-none"
+    >
       <div className="relative h-[50vh] w-px bg-parchment/15">
         <div
           className="absolute left-0 top-0 w-px bg-cinnabar transition-all duration-150 ease-out"

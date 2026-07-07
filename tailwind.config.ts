@@ -46,7 +46,9 @@ module.exports = {
   			void: '#160324',
   			depth: '#7B29A6',
   			parchment: '#F2D2AB',
-  			cinnabar: '#D05D15'
+  			cinnabar: '#D05D15',
+  			'cinnabar-bright': '#D96A2A',
+  			'cinnabar-deep': '#993D08'
   		},
   		fontFamily: {
   			heading: ['BioRhyme', 'serif'],

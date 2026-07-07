@@ -10,7 +10,7 @@ export default function Experience() {
       <div className="absolute top-0 left-0 right-0 h-px bg-cinnabar/40" />
 
       <div className="mb-16 md:mb-24">
-        <p className="font-body text-cinnabar text-[13px] tracking-mega uppercase mb-4">
+        <p className="font-body text-cinnabar-bright text-[13px] tracking-mega uppercase mb-4">
           02 - Where I've Worked
         </p>
         <h2
@@ -32,6 +32,8 @@ export default function Experience() {
                   <button
                     onClick={() => setActive(i)}
                     onMouseEnter={() => setActive(i)}
+                    onFocus={() => setActive(i)}
+                    aria-current={isActive || undefined}
                     className="group w-full text-left border-t border-parchment/15 last:border-b py-6 transition-colors duration-300"
                     data-cursor="hover"
                   >
@@ -41,16 +43,21 @@ export default function Experience() {
                           className="font-heading heading-kern transition-colors duration-300"
                           style={{
                             fontSize: "clamp(1.25rem, 3vw, 2rem)",
-                            color: isActive ? "#D05D15" : "#F2D2AB",
+                            // bright variant: base cinnabar is 3.78:1 on void,
+                            // below 4.5:1 for this size. Underline keeps the
+                            // active state visible without relying on color.
+                            color: isActive ? "#D96A2A" : "#F2D2AB",
+                            textDecoration: isActive ? "underline" : "none",
+                            textUnderlineOffset: "6px",
                           }}
                         >
                           {exp.company}
                         </h3>
-                        <p className="font-body text-parchment/50 text-sm tracking-caption mt-1">
+                        <p className="font-body text-parchment/70 text-sm tracking-caption mt-1">
                           {exp.role}
                         </p>
                       </div>
-                      <span className="font-body text-parchment/40 text-[12px] tracking-caption whitespace-nowrap">
+                      <span className="font-body text-parchment/70 text-[12px] tracking-caption whitespace-nowrap">
                         {exp.period}
                       </span>
                     </div>
@@ -83,11 +90,11 @@ export default function Experience() {
             </div>
 
             <div className="flex flex-wrap gap-4 mb-8">
-              <span className="font-body text-parchment/50 text-sm tracking-mega uppercase">
+              <span className="font-body text-parchment/70 text-sm tracking-mega uppercase">
                 {job.period}
               </span>
               <span className="font-body text-parchment/30">·</span>
-              <span className="font-body text-parchment/50 text-sm tracking-mega uppercase">
+              <span className="font-body text-parchment/70 text-sm tracking-mega uppercase">
                 {job.location}
               </span>
             </div>
@@ -101,7 +108,7 @@ export default function Experience() {
                         {position.role}
                       </h5>
                       {position.period && (
-                        <span className="font-body text-parchment/40 text-[12px] tracking-mega uppercase whitespace-nowrap">
+                        <span className="font-body text-parchment/70 text-[12px] tracking-mega uppercase whitespace-nowrap">
                           {position.period}
                         </span>
                       )}
@@ -130,7 +137,7 @@ export default function Experience() {
                 </p>
 
                 <div className="space-y-4">
-                  <p className="font-body text-cinnabar text-[12px] tracking-mega uppercase">
+                  <p className="font-body text-cinnabar-bright text-[12px] tracking-mega uppercase">
                     Key Contributions
                   </p>
                   <ul className="space-y-3">
