@@ -8,6 +8,14 @@ import NotFound from "@/pages/NotFound";
 
 const MEDIA_TAG = /\[(img|video)\](.+?)\[\/\1\]/g;
 
+// Media tags support an optional alt/title after a pipe:
+// [img]https://...|Homepage redesign on mobile[/img]
+function splitMedia(value) {
+  const pipe = value.indexOf("|");
+  if (pipe === -1) return { url: value.trim(), alt: "" };
+  return { url: value.slice(0, pipe).trim(), alt: value.slice(pipe + 1).trim() };
+}
+
 function getYouTubeId(url) {
   const match = url.match(
     /(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/
@@ -15,14 +23,14 @@ function getYouTubeId(url) {
   return match ? match[1] : null;
 }
 
-function YouTubeEmbed({ url }) {
+function YouTubeEmbed({ url, title }) {
   const id = getYouTubeId(url);
   if (!id) return null;
   return (
     <div className="relative overflow-hidden my-2" style={{ aspectRatio: "16 / 9" }}>
       <iframe
         src={`https://www.youtube-nocookie.com/embed/${id}`}
-        title="YouTube video"
+        title={title || "YouTube video"}
         className="absolute inset-0 w-full h-full"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
@@ -38,9 +46,11 @@ function renderInline(text) {
     if (parts[i]) nodes.push(parts[i]);
     const [type, value] = [parts[i + 1], parts[i + 2]];
     if (type === "img") {
-      nodes.push(<img key={i} src={value} alt="" className="inline-block max-w-full h-auto align-middle my-2" />);
+      const { url, alt } = splitMedia(value);
+      nodes.push(<img key={i} src={url} alt={alt} className="inline-block max-w-full h-auto align-middle my-2" />);
     } else if (type === "video") {
-      nodes.push(<YouTubeEmbed key={i} url={value} />);
+      const { url, alt } = splitMedia(value);
+      nodes.push(<YouTubeEmbed key={i} url={url} title={alt} />);
     }
   }
   return nodes;
@@ -68,13 +78,14 @@ function ParagraphBlock({ text, imageFit = "crop" }) {
   const soloMedia = text.trim().match(/^\[(img|video)\](.+?)\[\/\1\]$/);
   if (soloMedia) {
     const [, type, value] = soloMedia;
-    if (type === "video") return <YouTubeEmbed url={value} />;
+    const { url, alt } = splitMedia(value);
+    if (type === "video") return <YouTubeEmbed url={url} title={alt} />;
     if (imageFit === "natural") {
-      return <img src={value} alt="" className="w-full h-auto" />;
+      return <img src={url} alt={alt} className="w-full h-auto" />;
     }
     return (
       <div className="relative overflow-hidden" style={{ aspectRatio: "16 / 10" }}>
-        <img src={value} alt="" className="w-full h-full object-cover" />
+        <img src={url} alt={alt} className="w-full h-full object-cover" />
       </div>
     );
   }
@@ -111,20 +122,21 @@ export default function ProjectDetail() {
   const isGallery = project.layout === "gallery";
 
   return (
-    <main className="relative bg-void">
+    <main id="main" tabIndex={-1} className="relative bg-void outline-none">
       <MenuOverlay open={menuOpen} onClose={() => setMenuOpen(false)} />
 
       <div className="sticky top-0 z-30 flex items-center justify-between px-[8vw] md:px-[12vw] py-6 md:py-8 bg-void/90 backdrop-blur-sm border-b border-parchment/10">
         <Link
           to="/"
-          className="flex items-center gap-2 font-body text-parchment hover:text-cinnabar transition-colors text-[13px] tracking-mega uppercase"
+          className="flex items-center gap-2 font-body text-parchment hover:text-cinnabar-bright transition-colors text-[13px] tracking-mega uppercase"
         >
           <ArrowLeft size={14} strokeWidth={1.2} />
           Index
         </Link>
         <button
           onClick={() => setMenuOpen(true)}
-          className="flex items-center gap-3 font-body text-parchment hover:text-cinnabar transition-colors text-[13px] tracking-mega uppercase"
+          className="flex items-center gap-3 font-body text-parchment hover:text-cinnabar-bright transition-colors text-[13px] tracking-mega uppercase"
+          aria-haspopup="dialog"
           aria-label="Open menu"
         >
           <span>Menu</span>
@@ -135,7 +147,7 @@ export default function ProjectDetail() {
       {isGallery ? (
         <article className="grain px-[8vw] md:px-[12vw] py-[10vh]">
           <div className="max-w-3xl mx-auto">
-            <p className="font-body text-cinnabar text-[13px] tracking-mega uppercase mb-4">
+            <p className="font-body text-cinnabar-bright text-[13px] tracking-mega uppercase mb-4">
               {project.id} - {project.discipline}
             </p>
             <h1
@@ -158,7 +170,7 @@ export default function ProjectDetail() {
         <article className="grain px-[8vw] md:px-[12vw] py-[10vh] grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
           {/* Content */}
           <div className="md:col-span-8">
-            <p className="font-body text-cinnabar text-[13px] tracking-mega uppercase mb-4">
+            <p className="font-body text-cinnabar-bright text-[13px] tracking-mega uppercase mb-4">
               {project.id} - {project.discipline}
             </p>
             <h1
@@ -200,7 +212,7 @@ export default function ProjectDetail() {
           {/* Table of contents */}
           <nav className="md:col-span-4">
             <div className="md:sticky md:top-32">
-              <p className="font-body text-parchment/40 text-[12px] tracking-mega uppercase mb-6">
+              <p className="font-body text-parchment/70 text-[12px] tracking-mega uppercase mb-6">
                 Table of Contents
               </p>
               <ul className="space-y-3 border-l border-parchment/15">
@@ -212,8 +224,8 @@ export default function ProjectDetail() {
                         href={`#${section.id}`}
                         className="block pl-5 py-1 -ml-px border-l transition-colors duration-300 font-body text-base tracking-caption"
                         style={{
-                          borderColor: isActive ? "#D05D15" : "transparent",
-                          color: isActive ? "#D05D15" : "rgba(242,210,171,0.5)",
+                          borderColor: isActive ? "#D96A2A" : "transparent",
+                          color: isActive ? "#D96A2A" : "rgba(242,210,171,0.7)",
                         }}
                         data-cursor="hover"
                       >

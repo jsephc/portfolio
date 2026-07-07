@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function NotFound() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center bg-void grain px-[8vw] text-center">
-      <p className="font-body text-cinnabar text-[13px] tracking-mega uppercase mb-6">
+      <p className="font-body text-cinnabar-bright text-[13px] tracking-mega uppercase mb-6">
         404 - Lost in the Void
       </p>
       <h1
@@ -14,7 +14,7 @@ export default function NotFound() {
       </h1>
       <Link
         to="/"
-        className="font-body text-parchment text-sm tracking-mega uppercase border-b border-parchment/40 pb-1 hover:text-cinnabar hover:border-cinnabar transition-colors"
+        className="font-body text-parchment text-sm tracking-mega uppercase border-b border-parchment/40 pb-1 hover:text-cinnabar-bright hover:border-cinnabar-bright transition-colors"
         data-cursor="hover"
       >
         Return Home
