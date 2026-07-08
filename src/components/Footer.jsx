@@ -19,7 +19,7 @@ export default function Footer() {
         </div>
 
         <p className="font-body text-parchment/70 text-[14px] tracking-mega uppercase text-center border-t border-parchment/10 pt-8">
-          © {year} - José Caselles · Product Designer
+          © {year} - José Caselles - Product Designer
         </p>
       </div>
     </footer>

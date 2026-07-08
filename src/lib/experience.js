@@ -1,20 +1,5 @@
 export const EXPERIENCE = [
   {
-    company: "Hauler Hero",
-    role: "UX Strategist SR",
-    period: "Aug 2025 - Present",
-    location: "Remote",
-    summary:
-      "Leading heuristic evaluations and UX audits to detect friction points and optimization opportunities, while shaping design systems, experience frameworks, and UX strategy at a strategic level.",
-    highlights: [
-      "Heuristic evaluation and UX audits to identify friction and optimization opportunities",
-      "Implementation of experimentation processes to validate design decisions",
-      "Collaboration on the construction and evolution of design systems from a strategic perspective",
-      "Design of experience frameworks and customer journeys",
-      "Definition and evolution of UX strategy",
-    ],
-  },
-  {
     company: "Globant",
     role: "Visual Designer",
     period: "Jun 2022 - Present",
@@ -61,6 +46,21 @@ export const EXPERIENCE = [
           "Strengthened cross-functional teamwork and delivered meaningful business results",
         ],
       },
+    ],
+  },
+  {
+    company: "Hauler Hero",
+    role: "UX Strategist SR",
+    period: "Aug 2025 - Present",
+    location: "Remote",
+    summary:
+      "Leading heuristic evaluations and UX audits to detect friction points and optimization opportunities, while shaping design systems, experience frameworks, and UX strategy at a strategic level.",
+    highlights: [
+      "Heuristic evaluation and UX audits to identify friction and optimization opportunities",
+      "Implementation of experimentation processes to validate design decisions",
+      "Collaboration on the construction and evolution of design systems from a strategic perspective",
+      "Design of experience frameworks and customer journeys",
+      "Definition and evolution of UX strategy",
     ],
   },
   {

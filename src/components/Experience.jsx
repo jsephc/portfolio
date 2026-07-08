@@ -1,5 +1,17 @@
 import React, { useState } from "react";
+import { Accessibility, ArrowUpRight } from "lucide-react";
 import { EXPERIENCE } from "@/lib/experience";
+
+const IAAP_BADGES = [
+  {
+    label: "WCAG 2.2 AA Knowledge",
+    href: "https://www.credly.com/badges/23e8a4bd-d6d3-4926-8557-0117871a415d/linked_in_profile",
+  },
+  {
+    label: "A11Y Development Knowledge",
+    href: "https://www.credly.com/badges/fd44ecb8-a0bd-4c50-8e0a-2e6b605e9756/linked_in_profile",
+  },
+];
 
 export default function Experience() {
   const [active, setActive] = useState(0);
@@ -19,6 +31,45 @@ export default function Experience() {
         >
           Experience
         </h2>
+
+        {/* IAAP accessibility credentials, each linked to its Credly badge */}
+        <div className="mt-10 flex flex-wrap items-center gap-x-5 gap-y-3">
+          <span className="inline-flex items-center gap-2.5 rounded-full bg-cinnabar-deep pl-4 pr-5 py-2.5">
+            <Accessibility
+              size={18}
+              strokeWidth={1.6}
+              className="text-parchment flex-shrink-0"
+              aria-hidden="true"
+            />
+            <span className="font-body text-parchment text-[12px] tracking-mega uppercase">
+              Accessibility Specialist
+            </span>
+          </span>
+
+          <span className="font-body text-parchment/50 text-[12px] tracking-mega uppercase">
+            IAAP Certified
+          </span>
+
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
+            {IAAP_BADGES.map((badge) => (
+              <a
+                key={badge.href}
+                href={badge.href}
+                target="_blank"
+                rel="noreferrer"
+                data-cursor="hover"
+                className="group inline-flex items-center gap-1.5 font-body text-parchment/70 hover:text-parchment text-sm tracking-caption border-b border-parchment/20 hover:border-cinnabar pb-1 transition-colors"
+              >
+                {badge.label}
+                <ArrowUpRight
+                  size={14}
+                  strokeWidth={1.4}
+                  className="flex-shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                />
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16">
@@ -93,7 +144,7 @@ export default function Experience() {
               <span className="font-body text-parchment/70 text-sm tracking-mega uppercase">
                 {job.period}
               </span>
-              <span className="font-body text-parchment/30">·</span>
+              <span className="font-body text-parchment/30">-</span>
               <span className="font-body text-parchment/70 text-sm tracking-mega uppercase">
                 {job.location}
               </span>

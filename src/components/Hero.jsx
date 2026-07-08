@@ -106,7 +106,7 @@ export default function Hero({ onMenuOpen }) {
   }
 
   return (
-    <section id="hero" ref={scrollRef} className="relative" style={{ height: "210vh" }}>
+    <section id="hero" ref={scrollRef} className="relative" style={{ height: "200vh" }}>
       {/* Sticky pinned viewport */}
       <div className="sticky top-0 h-screen overflow-hidden grain bg-void flex flex-col">
         {topBar}
