@@ -4,6 +4,9 @@ export default function CustomCursor() {
   const [position, setPosition] = useState({ x: -100, y: -100 });
   const [isHovering, setIsHovering] = useState(false);
   const [isClicking, setIsClicking] = useState(false);
+  // Section 04 (Contact) has a parchment bg, so the parchment-colored dot
+  // disappears there - flip it to the void purple used by the other sections.
+  const [onLight, setOnLight] = useState(false);
   // The CSS that hides the native cursor is scoped to this same condition,
   // so users with reduced motion keep their normal pointer.
   const [reducedMotion] = useState(
@@ -22,6 +25,7 @@ export default function CustomCursor() {
       const interactive =
         target.closest('a, button, [data-cursor="hover"], input, textarea, label');
       setIsHovering(!!interactive);
+      setOnLight(!!target.closest("#contact"));
     };
     const down = () => setIsClicking(true);
     const up = () => setIsClicking(false);
@@ -57,7 +61,7 @@ export default function CustomCursor() {
             // collapsing to 0 left only a translucent ring to aim with.
             width: isHovering ? "5px" : "7px",
             height: isHovering ? "5px" : "7px",
-            backgroundColor: "#F2D2AB",
+            backgroundColor: onLight ? "#160324" : "#F2D2AB",
             borderRadius: "50%",
             transition: "all 0.2s ease-out",
           }}

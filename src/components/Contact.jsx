@@ -145,7 +145,7 @@ export default function Contact() {
             <div className="md:w-[280px]">
               <label className="block">
                 <span className="font-body text-void/70 text-base tracking-caption block mb-3">
-                  to be finished by
+                  to be finished by <span className="text-void/40">(optional)</span>
                 </span>
                 <input
                   type="date"
@@ -153,14 +153,13 @@ export default function Contact() {
                   onChange={(e) => setDeadline(e.target.value)}
                   className="w-full bg-transparent border-0 border-b-2 border-void/60 focus:border-cinnabar outline-none font-body text-void pb-3 transition-colors"
                   style={{ fontSize: "1.25rem" }}
-                  required
                 />
               </label>
             </div>
             <button
               type="submit"
               disabled={sending}
-              className="group flex items-center gap-3 self-start md:self-end font-body text-void text-sm tracking-mega uppercase border-b-2 border-void pb-3 hover:text-cinnabar-deep hover:border-cinnabar-deep transition-colors disabled:opacity-50"
+              className="group flex items-center gap-3 self-start md:self-end font-body font-bold text-parchment text-sm tracking-mega uppercase bg-cinnabar-deep px-6 py-3 hover:bg-void transition-colors disabled:opacity-50"
             >
               {sending ? "Sending..." : "Send"}
               <ArrowUpRight

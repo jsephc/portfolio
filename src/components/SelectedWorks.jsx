@@ -89,12 +89,15 @@ export default function SelectedWorks() {
               <div
                 className="overflow-hidden transition-all duration-700"
                 style={{
-                  maxHeight: isHovered ? "400px" : "0px",
+                  // 600px accommodates the stacked mobile layout; on md+ the
+                  // row is ~360px. The image height is capped below so the
+                  // centered description can never fall outside the clip.
+                  maxHeight: isHovered ? "600px" : "0px",
                   opacity: isHovered ? 1 : 0,
                 }}
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pb-10">
-                  <div className="relative overflow-hidden" style={{ aspectRatio: "3 / 4" }}>
+                  <div className="relative overflow-hidden" style={{ height: "320px" }}>
                     <img
                       src={project.image}
                       alt={project.title}

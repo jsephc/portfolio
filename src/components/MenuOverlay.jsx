@@ -114,7 +114,7 @@ export default function MenuOverlay({ open, onClose }) {
       </nav>
 
       <div className="absolute bottom-6 left-[8vw] md:bottom-10 md:left-[12vw] font-body text-parchment/60 text-[12px] tracking-mega uppercase">
-        José Caselles - Product Designer · Argentina
+        José Caselles - Product Designer - Argentina
       </div>
     </div>
   );
