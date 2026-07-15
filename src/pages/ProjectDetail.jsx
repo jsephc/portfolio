@@ -6,7 +6,7 @@ import MenuOverlay from "@/components/MenuOverlay";
 import Footer from "@/components/Footer";
 import NotFound from "@/pages/NotFound";
 
-const MEDIA_TAG = /\[(img|video)\](.+?)\[\/\1\]/g;
+const INLINE_RE = /\[(img|video)\](.+?)\[\/\1\]|\*\*(.+?)\*\*|\*(.+?)\*|\[([^\]]+)\]\(([^)]+)\)/g;
 
 // Media tags support an optional alt/title after a pipe:
 // [img]https://...|Homepage redesign on mobile[/img]
@@ -39,20 +39,43 @@ function YouTubeEmbed({ url, title }) {
   );
 }
 
-function renderInline(text) {
-  const parts = text.split(MEDIA_TAG);
+function renderInline(text, keyPrefix = "") {
   const nodes = [];
-  for (let i = 0; i < parts.length; i += 3) {
-    if (parts[i]) nodes.push(parts[i]);
-    const [type, value] = [parts[i + 1], parts[i + 2]];
-    if (type === "img") {
-      const { url, alt } = splitMedia(value);
-      nodes.push(<img key={i} src={url} alt={alt} className="inline-block max-w-full h-auto align-middle my-2" />);
-    } else if (type === "video") {
-      const { url, alt } = splitMedia(value);
-      nodes.push(<YouTubeEmbed key={i} url={url} title={alt} />);
+  let lastIndex = 0;
+  let match;
+  let i = 0;
+  INLINE_RE.lastIndex = 0;
+  while ((match = INLINE_RE.exec(text))) {
+    if (match.index > lastIndex) nodes.push(text.slice(lastIndex, match.index));
+    const [, mediaType, mediaValue, boldText, italicText, linkText, linkUrl] = match;
+    const key = `${keyPrefix}${i++}`;
+    if (mediaType) {
+      const { url, alt } = splitMedia(mediaValue);
+      if (mediaType === "img") {
+        nodes.push(<img key={key} src={url} alt={alt} className="inline-block max-w-full h-auto align-middle my-2" />);
+      } else {
+        nodes.push(<YouTubeEmbed key={key} url={url} title={alt} />);
+      }
+    } else if (boldText !== undefined) {
+      nodes.push(<strong key={key}>{renderInline(boldText, key)}</strong>);
+    } else if (italicText !== undefined) {
+      nodes.push(<em key={key}>{renderInline(italicText, key)}</em>);
+    } else if (linkText !== undefined) {
+      nodes.push(
+        <a
+          key={key}
+          href={linkUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline underline-offset-2 text-cinnabar-bright hover:text-parchment transition-colors"
+        >
+          {renderInline(linkText, key)}
+        </a>
+      );
     }
+    lastIndex = INLINE_RE.lastIndex;
   }
+  if (lastIndex < text.length) nodes.push(text.slice(lastIndex));
   return nodes;
 }
 
@@ -157,7 +180,7 @@ export default function ProjectDetail() {
               {project.title}
             </h1>
 
-            <img src={project.image} alt={project.title} className="w-full h-auto" />
+            <img src={project.coverImage} alt={project.title} className="w-full h-auto" />
 
             <div>
               {project.sections.flatMap((section) => section.body).map((paragraph, i) => (
@@ -182,7 +205,7 @@ export default function ProjectDetail() {
 
             <div className="relative overflow-hidden mb-16" style={{ aspectRatio: "16 / 10" }}>
               <img
-                src={project.image}
+                src={project.coverImage}
                 alt={project.title}
                 className="w-full h-full object-cover"
               />

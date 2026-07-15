@@ -179,7 +179,7 @@ function ProjectCard({ project, tabIndex }) {
         }}
       >
         <img
-          src={project.image}
+          src={project.heroImage}
           alt={project.title}
           className="w-full h-full object-cover transition-transform duration-700"
           style={{

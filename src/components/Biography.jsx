@@ -10,6 +10,18 @@ export default function Biography() {
           <p className="font-body text-cinnabar-bright text-[13px] tracking-mega uppercase mb-4">
             01 - Biography
           </p>
+          <img
+            src="/mark.png"
+            alt=""
+            aria-hidden="true"
+            className="w-28 md:w-44 ml-6 md:ml-16 mt-24 -rotate-6 opacity-90 transition-transform duration-500 hover:rotate-0"
+          />
+          <img
+            src="/mark-2.png"
+            alt=""
+            aria-hidden="true"
+            className="w-24 md:w-32 ml-24 md:ml-36 mt-6 rotate-6 opacity-90 transition-transform duration-500 hover:rotate-0"
+          />
         </div>
 
         <div className="md:col-span-9">
@@ -29,16 +41,21 @@ export default function Biography() {
               spanning branding, art direction, and digital design.
             </p>
             <p className="font-body text-parchment/70 text-lg md:text-xl leading-[1.6] tracking-caption">
-              At ONPOWER, I developed the visual identity from scratch and
-              coordinated the creative areas to maintain brand consistency.
-              Later, at Novaz Group, I focused on UI/UX design for clients
-              across different sectors.
+              At ONPOWER, I built the brand's visual identity from scratch and
+              shaped its digital experiences. From there I moved into UX/UI,
+              leading design strategy and mentoring teams at Novaz Group for
+              international clients, then joined{" "}
+              <span className="text-cinnabar">Globant</span> to design
+              end-to-end products for enterprise clients and lead
+              accessibility programs aligned with ADA and WCAG 2.2.
             </p>
             <p className="font-body text-parchment/70 text-lg md:text-xl leading-[1.6] tracking-caption">
-              Currently, I am a Visual Designer at{" "}
-              <span className="text-cinnabar">Globant</span>, where I integrate
-              design, strategy, and accessibility to create consistent and
-              inclusive digital experiences.
+              Today, I'm still with{" "}
+              <span className="text-cinnabar">Globant</span> - a global
+              company - designing end-to-end products and leading
+              accessibility work for enterprise clients worldwide. I've also
+              taken on a Senior UX Strategist role at Hauler Hero, shaping
+              experience frameworks and customer journeys.
             </p>
           </div>
 
@@ -54,10 +71,7 @@ export default function Biography() {
               "Stakeholder Management",
               "Team Leadership",
             ].map((skill) => (
-              <div
-                key={skill}
-                className="border-t border-parchment/15 pt-4"
-              >
+              <div key={skill} className="border-t border-parchment/15 pt-4">
                 <p className="font-body text-parchment/60 text-sm tracking-caption uppercase">
                   {skill}
                 </p>

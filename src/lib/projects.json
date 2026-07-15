@@ -5,7 +5,9 @@
     "title": "Grifols",
     "discipline": "Native App, WebApp Design",
     "year": "2024 - 2025",
-    "image": "https://i.imgur.com/iJNvRZS.png",
+    "coverImage": "https://i.imgur.com/iJNvRZS.png",
+    "heroImage": "https://i.imgur.com/yyXG5Xb.png",
+    "worksImage": "https://i.imgur.com/A2BlFof.png",
     "description": "A redesign of Grifols' plasma donor app, replacing a broken, inconsistent DonorHub 2.0 with a reliable experience built on Grifols' D3 Design System.",
     "layout": "detailed",
     "sections": [
@@ -109,8 +111,10 @@
     "title": "Nowydwor",
     "discipline": "Brand Identity",
     "year": "2024",
-    "image": "https://i.imgur.com/631VnLg.jpg",
-    "description": "",
+    "coverImage": "https://i.imgur.com/631VnLg.jpg",
+    "heroImage": "https://i.imgur.com/W1hwWFd.png",
+    "worksImage": "https://i.imgur.com/lYiOaxL.png",
+    "description": "A brand manual for Nowy Dwor, a streetwear label - grounding its graffiti-inspired identity in a golden-circle brand strategy, responsive logo system, and full packaging rollout.",
     "layout": "gallery",
     "sections": [
       {
@@ -126,8 +130,10 @@
     "title": "Accessibility Assessment",
     "discipline": "Accessibility / UX Audit",
     "year": "2023",
-    "image": "https://i.imgur.com/i5LNkTf.png",
-    "description": "",
+    "coverImage": "https://i.imgur.com/i5LNkTf.png",
+    "heroImage": "https://i.imgur.com/i5LNkTf.png",
+    "worksImage": "https://i.imgur.com/i5LNkTf.png",
+    "description": "An accessibility assessment for a US university website - fixing color contrast, type scale, alt text, and keyboard navigation to meet WCAG standards across a large modular site.",
     "layout": "gallery",
     "sections": [
       {
@@ -143,8 +149,10 @@
     "title": "Creating a Dynamic Sales Process",
     "discipline": "UX Design - Insurance",
     "year": "2023",
-    "image": "https://i.imgur.com/JgZEitL.jpg",
-    "description": "",
+    "coverImage": "https://i.imgur.com/JgZEitL.jpg",
+    "heroImage": "https://i.imgur.com/kjaLV5e.png",
+    "worksImage": "https://i.imgur.com/kIqoPB8.png",
+    "description": "A UX redesign of an insurance sales process for Chilean agents - built on benchmarking, user personas, and wireframes to make sharing sensitive financial and family details feel friendly and transparent.",
     "layout": "gallery",
     "sections": [
       {
@@ -160,7 +168,9 @@
     "title": "People Banking Redesign",
     "discipline": "Material study",
     "year": "2021 - 2022",
-    "image": "https://i.imgur.com/WU7XP2X.png",
+    "coverImage": "https://i.imgur.com/WU7XP2X.png",
+    "heroImage": "https://i.imgur.com/92aw0Ui.png",
+    "worksImage": "https://i.imgur.com/CCWeMqG.png",
     "description": "A visual redesign of Banco Agrario de Colombia's People Banking page - new brand colours, typography, and a modernized UI system rooted in Colombia's agrarian identity.",
     "layout": "gallery",
     "sections": [
@@ -193,8 +203,10 @@
     "title": "Transtelco",
     "discipline": "Rebranding & Website Design",
     "year": "2021",
-    "image": "https://i.imgur.com/8FB7jt9.png",
-    "description": "",
+    "coverImage": "https://i.imgur.com/8FB7jt9.png",
+    "heroImage": "https://i.imgur.com/6eiVWkT.png",
+    "worksImage": "https://i.imgur.com/54gyLGo.png",
+    "description": "A rebranding and website redesign of Transtelco's digital presence, delivering a 20-25 page site and a new navy-blue identity spanning its FLO Networks wholesale brand.",
     "layout": "gallery",
     "sections": [
       {
@@ -247,8 +259,10 @@
     "title": "SIDOM",
     "discipline": "Rebranding & Website Design",
     "year": "2021",
-    "image": "https://i.imgur.com/iqeYiZq.png",
-    "description": "",
+    "coverImage": "https://i.imgur.com/iqeYiZq.png",
+    "heroImage": "https://i.imgur.com/iqeYiZq.png",
+    "worksImage": "https://i.imgur.com/iqeYiZq.png",
+    "description": "A rebranding and website design for SIDOM's global trade platform, introducing a new logo, colour palette, and full institutional site to compete in the international market.",
     "layout": "gallery",
     "sections": [
       {
@@ -294,7 +308,9 @@
     "title": "ONPOWER",
     "discipline": "Brand Identity",
     "year": "2019-2020",
-    "image": "https://i.imgur.com/KN7sS8x.png",
+    "coverImage": "https://i.imgur.com/KN7sS8x.png",
+    "heroImage": "https://i.imgur.com/3CyqTqL.png",
+    "worksImage": "https://i.imgur.com/h94jO8W.png",
     "description": "",
     "layout": "gallery",
     "sections": [

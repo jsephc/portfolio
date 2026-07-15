@@ -99,7 +99,7 @@ export default function SelectedWorks() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pb-10">
                   <div className="relative overflow-hidden" style={{ height: "320px" }}>
                     <img
-                      src={project.image}
+                      src={project.worksImage}
                       alt={project.title}
                       className="w-full h-full object-cover"
                     />
